@@ -6,5 +6,5 @@
 font-family: 'Poppins', sans-serif; */
 
 body {
-    @apply font-base text-dark bg-light-grey;
+    @apply font-base text-dark;
 }
