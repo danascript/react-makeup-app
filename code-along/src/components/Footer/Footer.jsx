@@ -16,11 +16,11 @@ const Footer = () => (
 
         <div className="flex justify-between mx-auto">
             {links.map(item => (
-                <div className="flex flex-col flex-wrap mr-10">
+                <div className="flex flex-col flex-wrap mr-10" key={item.title}>
                     <h6 className="font-krona text-sm">{item.title}</h6>
                     <div>
                         {item.links.map(link => (
-                            <Link to={link.path} key={link} className="lowercase text-sm block hover:text-yellow">
+                            <Link to={link.path} key={link.name} className="lowercase text-sm block hover:text-yellow">
                                 {link.name}
                             </Link>
                         ))}
