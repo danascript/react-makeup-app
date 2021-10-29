@@ -1,11 +1,12 @@
 import React from 'react';
-import useGetProducts from '../hooks/useGetProducts';
+import useGetProduct from '../hooks/useGetProduct';
 
 import ProductPrice from '../components/ProductPrice';
 import ProductTitle from '../components/ProductTitle';
+import RecommendedProducts from '../components/RecommendedProducts';
 
 const Product = () => {
-    const { singleProduct } = useGetProducts();
+    const { singleProduct } = useGetProduct();
 
     if (!singleProduct) return <p>Loading...</p>;
 
@@ -40,6 +41,7 @@ const Product = () => {
             </div>
 
             {/* for you products */}
+            <RecommendedProducts product={singleProduct} />
             {/* <div className="flex flex-wrap justify-center">
                 {singleProduct.recommended ? (
                     singleProduct.recommended.map(product => (

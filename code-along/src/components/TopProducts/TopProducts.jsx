@@ -1,17 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import SecondaryBanner from '../SecondaryBanner';
 import ButtonLink from '../ButtonLink';
 import SectionTitle from '../SectionTitle';
-import useGetProducts from '../../hooks/useGetProducts';
+import useGetTopProducts from '../../hooks/useGetTopProducts';
 import ProductCard from '../ProductCard';
 
 const TopProducts = () => {
-    const { products, getTopProducts } = useGetProducts();
-
-    useEffect(() => {
-        getTopProducts();
-    }, []);
+    const products = useGetTopProducts();
 
     return (
         <div>
