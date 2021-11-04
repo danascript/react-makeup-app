@@ -8,7 +8,7 @@ import './SecondaryBanner.css';
 
 const SecondaryBanner = () => {
     return (
-        <div className="banner__secondary container flex items-center justify-between mx-auto px-20 bg-pink w-full">
+        <div className="banner__secondary container flex items-center justify-between mx-auto md:px-20 bg-pink w-full">
             <div>
                 <h3 className="font-krona mb-4">
                     Be natural, <br /> be smart, <br /> be you

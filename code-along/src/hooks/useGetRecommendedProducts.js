@@ -8,6 +8,7 @@ const useGetRecommendedProducts = product => {
     const [products, setProducts] = useState([]);
 
     const getRecommendedProducts = useCallback(() => {
+        // TODO: randomise recommended chunk of products
         const key = product.product_type ? 'product_type' : 'brand';
         const value = product.product_type ? product.product_type : product.brand;
 

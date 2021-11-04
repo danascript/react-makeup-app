@@ -10,11 +10,11 @@ const TopProducts = () => {
     const products = useGetTopProducts();
 
     return (
-        <div>
-            <div className="container mx-auto">
+        <div className="md:mt-20">
+            <div className="container mx-auto -mb-10">
                 <div className="flex items-center justify-between mb-6">
                     <SectionTitle text="Top Products" />
-                    <ButtonLink path="/about" text="see more" isMain />
+                    <ButtonLink path="/about" text="see more" isMain className="hidden md:block" />
                 </div>
                 {/* Products */}
                 <div className="flex flex-wrap justify-center">

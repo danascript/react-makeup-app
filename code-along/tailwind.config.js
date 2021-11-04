@@ -19,6 +19,9 @@ module.exports = {
             zIndex: {
                 '-1': -1,
             },
+            container: {
+                padding: '1rem',
+            },
         },
     },
     variants: {
