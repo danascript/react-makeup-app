@@ -20,7 +20,7 @@ const SecondaryBanner = () => {
                     className="py-8"
                     width="200"
                     src={bannerImg}
-                    alt="Tooth brush and a paste laying on top of a green leaf"
+                    alt="A bundle of cream products standing next to each other"
                 />
             </div>
         </div>
