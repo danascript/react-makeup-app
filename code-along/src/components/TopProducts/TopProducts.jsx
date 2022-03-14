@@ -5,6 +5,7 @@ import ButtonLink from '../ButtonLink';
 import SectionTitle from '../SectionTitle';
 import useGetTopProducts from '../../hooks/useGetTopProducts';
 import ProductCard from '../ProductCard';
+import Loader from '../Loader';
 
 const TopProducts = () => {
     const products = useGetTopProducts();
@@ -18,16 +19,22 @@ const TopProducts = () => {
                 </div>
                 {/* Products */}
                 <div className="flex flex-wrap justify-center">
-                    {products.map(product => (
-                        <ProductCard
-                            key={product.id}
-                            id={product.id}
-                            name={product.name}
-                            brand={product.brand}
-                            imgUrl={product.api_featured_image}
-                            price={product.price}
-                        />
-                    ))}
+                    {products.length === 0 ? (
+                        <Loader classes="my-4" />
+                    ) : (
+                        <>
+                            {products.map(product => (
+                                <ProductCard
+                                    key={product.id}
+                                    id={product.id}
+                                    name={product.name}
+                                    brand={product.brand}
+                                    imgUrl={product.api_featured_image}
+                                    price={product.price}
+                                />
+                            ))}
+                        </>
+                    )}
                 </div>
             </div>
             <SecondaryBanner />

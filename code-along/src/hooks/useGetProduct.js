@@ -7,8 +7,10 @@ const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products';
 const useGetProduct = () => {
     const { id } = useParams();
     const [singleProduct, setSingleProduct] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     const getSingleProduct = useCallback(() => {
+        setIsLoading(true);
         axios.get(`${BASE_URL}/${id}.json`).then(response => {
             setSingleProduct(response.data);
         });
@@ -18,7 +20,12 @@ const useGetProduct = () => {
         getSingleProduct();
     }, [id, getSingleProduct]);
 
+    useEffect(() => {
+        setIsLoading(false);
+    }, [singleProduct]);
+
     return {
+        isLoading,
         singleProduct,
     };
 };
