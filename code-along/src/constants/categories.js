@@ -12,7 +12,7 @@ export const CATEGORIES = [
         subCategories: ['lipstick', 'lip liner'],
     },
     {
-        name: 'nail polish',
-        subCategories: [],
+        name: 'nails',
+        subCategories: ['nail polish'],
     },
 ];
