@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import useGetRecommendedProducts from '../../hooks/useGetRecommendedProducts';
 import Loader from '../Loader/Loader';
@@ -10,8 +10,7 @@ const RecommendedProducts = ({ product }) => {
     const products = useGetRecommendedProducts(product);
 
     return (
-        <Fragment>
-            {/* TODO: handle loading state */}
+        <>
             <SectionTitle text="For you" />
             {products.length === 0 ? (
                 <Loader classes="my-4" />
@@ -29,7 +28,7 @@ const RecommendedProducts = ({ product }) => {
                     ))}
                 </div>
             )}
-        </Fragment>
+        </>
     );
 };
 

@@ -4,6 +4,14 @@ import axios from 'axios';
 
 const BASE_URL = 'http://makeup-api.herokuapp.com/api/v1/products';
 
+const formatProduct = data => ({
+    ...data,
+    category: data.category.replace(/_/g, ' '),
+    product_type: data.product_type.replace(/_/g, ' '),
+    description: data.description.replace(/<\/?[^>]+(>|$)/g, ''),
+    api_featured_image: `https://${data.api_featured_image}`,
+});
+
 const useGetProduct = () => {
     const { id } = useParams();
     const [singleProduct, setSingleProduct] = useState(null);
@@ -12,7 +20,8 @@ const useGetProduct = () => {
     const getSingleProduct = useCallback(() => {
         setIsLoading(true);
         axios.get(`${BASE_URL}/${id}.json`).then(response => {
-            setSingleProduct(response.data);
+            const data = formatProduct(response.data);
+            setSingleProduct(data);
         });
     }, [id]);
 

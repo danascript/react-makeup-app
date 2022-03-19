@@ -4,8 +4,7 @@ import { useLocation } from 'react-router-dom';
 import useGetProduct from '../hooks/useGetProduct';
 
 import Benefits from '../components/Benefits';
-import ProductPreview from '../components/ProductPreview';
-import ProductTitle from '../components/ProductTitle';
+import ProductPreview from '../components/Product';
 import RecommendedProducts from '../components/RecommendedProducts';
 import Loader from '../components/Loader/Loader';
 
@@ -17,31 +16,21 @@ const Product = () => {
         window.scrollTo(0, 0);
     }, [location.pathname]);
 
-    if (!singleProduct)
-        return (
-            <div className="h-screen flex items-center justify-center">
-                <Loader />
-            </div>
-        );
+    if (!singleProduct) return <Loader classes="h-screen" />;
 
     return (
         <div className="mt-20 container mx-auto">
             {isLoading ? (
                 <Loader classes="h-screen" />
             ) : (
-                <>
-                    <ProductTitle name={singleProduct.name} type={singleProduct.product_type.replace(/_/g, ' ')} />
-
-                    {/* TODO: split to smaller components */}
-                    <ProductPreview
-                        name={singleProduct.name}
-                        img={singleProduct.api_featured_image}
-                        type={singleProduct.product_type}
-                        category={singleProduct.category}
-                        price={singleProduct.price}
-                        description={singleProduct.description}
-                    />
-                </>
+                <ProductPreview
+                    name={singleProduct.name}
+                    img={singleProduct.api_featured_image}
+                    type={singleProduct.product_type}
+                    category={singleProduct.category}
+                    price={singleProduct.price}
+                    description={singleProduct.description}
+                />
             )}
 
             <Benefits />

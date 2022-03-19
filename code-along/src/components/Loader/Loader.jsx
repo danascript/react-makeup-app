@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loader = ({ classes }) => (
     <div className={`${classes} flex items-center justify-center`}>
-        <div class="loader loader--style1" title="0">
+        <div title="loader">
             <svg
                 version="1.1"
                 id="loader-1"
@@ -13,7 +13,7 @@ const Loader = ({ classes }) => (
                 width="40px"
                 height="40px"
                 viewBox="0 0 40 40"
-                enable-background="new 0 0 40 40"
+                enableBackground="new 0 0 40 40"
                 xmlSpace="preserve"
             >
                 <path
