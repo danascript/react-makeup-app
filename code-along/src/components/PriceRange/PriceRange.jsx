@@ -2,7 +2,7 @@ import React from 'react';
 
 const PriceRange = () => {
     return (
-        <div className="bg-gray-200 mb-4 py-4 px-6">
+        <div className="bg-gray-200 py-4 px-6">
             <h4 className="font-krona text-sm mb-2">select price</h4>
             <div className="flex justify-between">
                 <div className="text-center">

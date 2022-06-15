@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 import { CATEGORIES } from '../../constants/categories';
 
-const CategoriesBar = ({ setFilter }) => {
+const CategoriesBar = ({ onSelect }) => {
     const [activeCategory, setActiveCategory] = useState(null);
 
     const setCategory = e => {
         const value = e.target.innerText;
 
-        setFilter('product_type', value);
+        onSelect(value);
         setActiveCategory(value);
     };
 
