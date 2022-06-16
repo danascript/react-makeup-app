@@ -8,7 +8,7 @@ This is a code along project where we code live on streams an Makeup Website usi
 - Makeup API (REST)
 - and probably some more things
 
-You can find the streams on my [YouTube channel](https://www.youtube.com/c/danascript/), I usually stream Mon-Fri at 19:15 CEST, but if not then you can find me on [Instagram](https://www.instagram.com/_danascript_/)
+You can find the code-along streams on my [YouTube channel](https://www.youtube.com/c/danascript/).
 
 Here is a list of recommended reading/watching material to help you kickstart this project with a bit of knowledge:
 

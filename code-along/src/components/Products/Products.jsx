@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSearchState } from '../../state/search-context';
 
-import Loader from '../Loader';
 import ProductCard from '../ProductCard';
 
 const Products = () => {
@@ -10,7 +9,10 @@ const Products = () => {
     return (
         <div className="flex flex-wrap justify-center">
             {products.length === 0 ? (
-                <Loader classes="my-4" />
+                <div className="text-center mt-8">
+                    <h4 className="font-krona">Sorry, no products</h4>
+                    <p>Please try changing your filters</p>
+                </div>
             ) : (
                 <>
                     {products.map(product => (
